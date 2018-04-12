@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stoper</title>
+</head>
+<body>
+    <script>
+        function Stopwatch() {
+            let duration = 0;
+            let state = 0; // 0 - initial, 1 - running, 2 - stopped
+            
+            Object.defineProperty(this, 'duration', {
+                get: () => duration/1000
+            });
+            
+            this.start = function() {
+                if (state !== 1) state = 1;
+                else throw new Error('Stopwatch has been already started!');
+            };
+            
+            this.stop = function() {
+                if (state === 1) state = 2;
+                else throw new Error('Stopwatch has been already stopped!');
+            };
+            
+            this.reset = function() {
+                if (state !== 0) {
+                    state = 0;
+                    duration = 0;
+                } else throw new Error('Stopwatch has been already cleared!');
+            };
+            
+            function increaseDuration() {
+                if (state === 1) duration += 10;
+            };
+            
+            setInterval(increaseDuration, 10);
+        };
+    
+    
+    
+    
+    </script>
+</body>
+</html>

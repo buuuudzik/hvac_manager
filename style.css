@@ -1,0 +1,365 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Alegreya Sans', sans-serif;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-radius: 5px 5px 0px 0px;
+    overflow: hidden;
+    background: linear-gradient(to right bottom, #ffffff, #f3f1f1);
+}
+
+th, td {
+    line-height: 26px;
+    padding: 0px;
+    transition: .3s all;
+}
+
+th {
+    text-transform: uppercase;
+    text-shadow: 1px 1px 1px black;
+}
+
+tbody tr:not(:first-child) {
+    border-width: 1px 0px 0px 0px;
+    border-color: #969696;
+    border-style: solid;
+}
+
+td:not(:first-child) {
+    text-align: center;
+    border-width: 0px 0px 0px 1px;
+    border-color: #969696;
+    border-style: solid;
+}
+
+.room {
+    padding-left: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+tr:hover td:first-child {
+    font-weight:bold;
+}
+
+img {
+    vertical-align: top;
+}
+
+.hvac-mode {
+    padding: 10px;
+    border-radius: 0px 0px 5px 5px;
+}
+
+input[type="button"] {
+    height: 30px;
+    width: 60px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.05s all ease-out;
+    filter: drop-shadow(2px 2px 1px black);
+    text-shadow: 1px 1px 1px black;
+    margin-right: 5px;
+    text-transform: uppercase;
+}
+
+input[type="button"]:focus {
+    outline: 0;
+}
+
+input[type="button"]:active {
+    filter: drop-shadow(0px 0px 0px black);
+}
+
+.hvac-mode input[type="button"].active {
+    filter: drop-shadow(1px 1px 0px black);
+}
+
+.hvac-off {
+    color: white;
+    background: linear-gradient(to right bottom, #3b3838, #000000);
+    border: 1px solid #3b3838;
+}
+
+.hvac-heat {
+    color: white;
+    background: linear-gradient(to right bottom, #e4a87d, #d2691e);
+    border: 1px solid #e4a87d;
+}
+
+.hvac-cool {
+    color: white;
+    background: linear-gradient(to right bottom, #9dc1e8, #5899e2);
+    border: 1px solid #9dc1e8;
+}
+
+@keyframes alert {
+    0% {
+        color: #ffff00;
+        filter: drop-shadow(1px 1px 2px #d2691e);
+    }
+    20% {
+        color: #ffffff;
+        filter: drop-shadow(0px 0px 0px #000000);
+    }
+    100% {
+        color: #ffffff;
+        filter: drop-shadow(0px 0px 0px #000000);
+    }
+}
+
+.hvac-mode-off {
+    color: white;
+    background: linear-gradient(to right bottom, #969696, #000000);
+    filter: drop-shadow(1px 1px 2px grey);
+}
+.hvac-mode-off .hvac-mode-info {
+    animation: alert 10s infinite ease;
+    transition: .3s;
+}
+
+.hvac-mode-heat, .hvac-mode-auto {
+    color: white;
+    background: linear-gradient(to right bottom, #c38957, #ffa500);
+    filter: drop-shadow(1px 1px 2px grey);
+}
+
+.hvac-mode-cool {
+    color: white;
+    background: linear-gradient(to right bottom, #456cb3, #5899e2);
+    filter: drop-shadow(1px 1px 2px grey);
+}
+
+.active {
+    color: #ffff00;
+}
+
+.hvac-mode-info {
+    height: 30px;
+    margin-right: 20px;
+    display: inline;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 1px black;
+}
+
+.state-on {
+    background-color: #ffff00;
+}
+.state-off {
+    color: #828282;
+    background-color: #e0dede;
+}
+
+.heat-on {
+    background-color: #d2691e;
+}
+.heat-off {
+    color: #828282;
+    background-color: #e0dede;;
+}
+
+.cool-on {
+    background-color: #9dc1e8;
+}
+.cool-off {
+    color: #828282;
+    background-color: #e0dede;
+}
+
+.fan-manual-on {
+    background-color: #dc9de8;
+}
+.fan-manual-off {
+    color: #828282;
+    background-color: #e0dede;
+}
+
+.pwm-valve-on {
+    background-color: #d2691e;
+}
+.pwm-valve-off {
+    color: #828282;
+    background-color: #e0dede;
+}
+
+.fan-step-plus, .fan-step-minus {
+    text-shadow: 1px 1px 1px grey;
+}
+
+.cool-value-0 {
+    color: #828282;
+    background-color: #e0dede;
+}
+.cool-value-0 > .fan-step-plus {
+    color: #ccd7ff;
+}
+
+.cool-value-1 {
+    background-color: #ccd7ff;
+}
+.cool-value-1 > .fan-step-minus {
+    color: #e0dede;
+}
+.cool-value-1 > .fan-step-plus {
+    color: #99b0ff;
+}
+
+.cool-value-2 {
+    background-color: #99b0ff;
+}
+.cool-value-2 > .fan-step-minus {
+    color: #ccd7ff;
+}
+.cool-value-2 > .fan-step-plus {
+    color: #6689ff;
+}
+
+.cool-value-3 {
+    background-color: #6689ff;
+}
+.cool-value-3 > .fan-step-minus {
+    color: #99b0ff;
+}
+.cool-value-3 > .fan-step-plus {
+    color: #3362ff;
+}
+
+.cool-value-4 {
+    background-color: #3362ff;
+}
+.cool-value-4 > .fan-step-minus {
+    color: #6689ff;
+}
+.cool-value-4 > .fan-step-plus {
+    color: #003bff;
+}
+
+.cool-value-5 {
+    background-color: #003bff;
+}
+.cool-value-5 > .fan-step-minus {
+    color: #3362ff;
+}
+
+
+.heat-value-0 {
+    color: #828282;
+    background-color: #e0dede;
+}
+.heat-value-0 > .fan-step-plus {
+    color: #ffe3ccf3;
+}
+
+.heat-value-1 {
+    background-color: #ffe3ccf3;
+}
+.heat-value-1 > .fan-step-minus {
+    color: #e0dede;
+}
+.heat-value-1 > .fan-step-plus {
+    color: #ffc899;
+}
+
+.heat-value-2 {
+    background-color: #ffc899;
+}
+.heat-value-2 > .fan-step-minus {
+    color: #ffe3ccf3;
+}
+.heat-value-2 > .fan-step-plus {
+    color: #ffac66;
+}
+
+.heat-value-3 {
+    background-color: #ffac66;
+}
+.heat-value-3 > .fan-step-minus {
+    color: #ffc899;
+}
+.heat-value-3 > .fan-step-plus {
+    color: #ff9133;
+}
+
+.heat-value-4 {
+    background-color: #ff9133;
+}
+.heat-value-4 > .fan-step-minus {
+    color: #ffac66;
+}
+.heat-value-4 > .fan-step-plus {
+    color: #ff7600;
+}
+
+.heat-value-5 {
+    background-color: #ff7600;
+}
+.heat-value-5 > .fan-step-minus {
+    color: #ff9133;
+}
+
+
+.error {
+    color: white;
+    background-color: #ff0000ef;
+}
+
+.temp-heating {
+    background-color: #ff7600;
+}
+.temp-cooling {
+    background-color: #3362ff;
+}
+.big-difference {
+    font-weight: bold;
+}
+
+.setp > *, .fan-step > * {
+    margin-left: 5px;
+}
+
+.cold-setp {
+    color: #ffffff;
+    background-color: #003bff;
+    border-color: white;
+}
+.cool-setp {
+    color: #ffffff;
+    background-color: #3362ff;
+    border-color: white;
+}
+.eco-setp {
+    color: #ffffff;
+    background-color: #169761;
+    border-color: white;
+}
+.warm-setp {
+    background-color: #ff7600;
+}
+.hot-setp {
+    background-color: #ff0000ef;
+}
+
+.temp-hvac-off, .setp-hvac-off {
+    color: #ffffff;
+    background-color: #000000;
+    border-color: white;
+}
+.setp-hvac-off > .setp-minus, .setp-hvac-off > .setp-plus {
+    text-shadow: 1px 1px 1px #969696;
+}
+
+.setp-minus, .setp-plus {
+    text-shadow: 1px 1px 1px #000000;
+    cursor: pointer;
+}
+.setp-minus {
+    color: #3362ff;
+}
+.setp-plus {
+    color: #ff7600;
+}
