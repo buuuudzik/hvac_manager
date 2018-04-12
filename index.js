@@ -667,7 +667,7 @@ class HVACManager {
         if (typeof(parent.showPlan)=='function') {
             $('.room').on('click', function() {
                 let id, selected = this.innerText;
-                let pages = ['Basen', 'Garaż', 'Kuchnia', 'Gabinet Szefa', 'Jadalnia', 'Salon', 'Komunikacja 0p', 'Komunikacja Ip', 'Sypialnia', 'Gabinet Pani', 'Łazienka Państwa', 'Garderoba', 'Gościnny 1', 'Gościnny z aneksem', 'Łazienka w Gościnnym', 'Muzyczny', 'Łazienka dla Gości'];
+                let pages = ['Kitchen', 'Living room'];
 
                 let roomIndex = pages.findIndex(v=>v.toLocaleUpperCase()===selected);
                 if (roomIndex < 2) id = 152;
